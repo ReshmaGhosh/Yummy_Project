@@ -37,7 +37,7 @@ function App() {
           element={<Favourite favourites={favourites} />}
         />
         <Route path="/contact" element={<Contact />} />
-        {/* <Route path="/recipe/:MealId" element={<RecipeDetails />} /> */}
+
         <Route path="*" element={<Pagenotfound />} />
       </Routes>
     </div>

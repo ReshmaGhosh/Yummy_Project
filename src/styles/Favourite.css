@@ -1,0 +1,28 @@
+.fav1 {
+  color: aliceblue;
+  padding-bottom: 50px;
+
+  padding-right: 250px;
+}
+
+.fav {
+  padding-top: 70px;
+  text-align: center;
+  margin-left: 380px;
+}
+.fav3 {
+  color: aliceblue;
+}
+.fav4 {
+  color: aliceblue;
+  padding-bottom: 50px;
+}
+.fav-image {
+  width: 250px;
+  height: 250px;
+  margin-right: 20px;
+}
+.fav-container {
+  display: flex;
+  align-items: center;
+}
