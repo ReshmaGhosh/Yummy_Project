@@ -1,0 +1,23 @@
+.home {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-container {
+  color: aliceblue;
+}
+.home-container h1 {
+  font-size: 50px;
+  padding-bottom: 50px;
+}
+.home-container p {
+  font-size: 40px;
+}
+.home-container h6 {
+  font-size: 20px;
+}

@@ -1,0 +1,37 @@
+.contact-details {
+  color: aliceblue;
+  text-align: center;
+  padding-top: 130px;
+  padding-bottom: 50px;
+}
+.contact {
+  font-size: 60px;
+  font-weight: 100;
+}
+.para1 {
+  padding-top: 20px;
+  line-height: 1.8;
+  font-size: 20px;
+  font-weight: 100;
+  padding-bottom: 20px;
+}
+.para2 {
+  font-size: 20px;
+  font-weight: 100;
+  padding-bottom: 20px;
+  line-height: 1.8;
+}
+.bold-text {
+  font-weight: bold;
+  line-height: 1.8;
+}
+.bold-text1 {
+  font-weight: bold;
+  font-size: 20px;
+}
+.para3 {
+  padding-bottom: 20px;
+}
+.para5 {
+  padding-bottom: 20px;
+}
