@@ -1,21 +1,12 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import RecipeItem from "../components/RecipeItem";
-//import Favourite from "../pages/Favourite";
+
 import "../styles/Recipe.css";
 
-function Recipe() {
+function Recipe({ addFavourite, removeFavourite }) {
   const [search, setSearch] = useState("");
   const [myRecipe, setMyRecipe] = useState([]);
-  //const [favourites, setFavourites] = useState([]);
-
-  //   const addFavourite = (recipe) => {
-  //     setFavourites([...favourites, recipe]);
-  //   };
-
-  //   const removeFavourite = (recipeToRemove) => {
-  //     setFavourites(favourites.filter((recipe) => recipe !== recipeToRemove));
-  //   };
 
   function searchRecipe(evt) {
     if (evt.key === "Enter") {
@@ -56,8 +47,8 @@ function Recipe() {
                 <RecipeItem
                   getRecipe={{ data: res }}
                   key={res.idMeal}
-                  //   addFavourite={addFavourite}
-                  //   removeFavourite={removeFavourite}
+                  addFavourite={addFavourite}
+                  removeFavourite={removeFavourite}
                 />
               );
             })
