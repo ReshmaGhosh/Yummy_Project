@@ -91,7 +91,7 @@ export default function RecipeReviewCard({
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+            {getRecipe.data.strMeal[0]}
           </Avatar>
         }
         action={

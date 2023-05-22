@@ -30,13 +30,14 @@ body {
 .container {
   width: 80%;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* justify-content: space-around; */
+  /* flex-wrap: wrap; */
   row-gap: 10px;
-  column-gap: 5px;
+  column-gap: 10px;
 }
-.card {
+/* .card {
   width: 300px;
   height: 400px;
   margin: 1.5rem;
@@ -49,8 +50,8 @@ body {
   overflow: auto;
   position: relative;
   box-sizing: border-box;
-}
-.card img {
+} */
+/* .card img {
   width: 100%;
 }
 .card .info {
@@ -67,4 +68,4 @@ body {
   font-size: 17px;
   letter-spacing: 2px;
   margin-top: 10px;
-}
+} */
