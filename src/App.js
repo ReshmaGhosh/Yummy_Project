@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Recipe from "./pages/Recipe";
 import Favourite from "./pages/Favourite";
 import Contact from "./pages/Contact";
+import NavBar from "./components/NavBar";
 // import RecipeDetails from "./components/RecipeDetails";
 import Pagenotfound from "./pages/Pagenotfound";
 
@@ -40,6 +41,7 @@ function App() {
 
         <Route path="*" element={<Pagenotfound />} />
       </Routes>
+      <NavBar favourites={favourites} />
     </div>
   );
 }

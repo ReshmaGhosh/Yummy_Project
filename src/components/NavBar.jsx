@@ -4,9 +4,11 @@ import { AppBar, Drawer, IconButton, Toolbar, Typography } from "@mui/material";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
+import Badge from "@mui/material/Badge";
+
 import "../styles/NavBar.css";
 
-function NavBar() {
+function NavBar({ favourites }) {
   const [mobileopen, setMobileOpen] = useState(false);
   //handle menu click
   const handleDrawerToggle = () => {
@@ -34,7 +36,12 @@ function NavBar() {
           <Link to="/recipe">Recipe</Link>
         </li>
         <li>
-          <Link to="/favourite">Favourite</Link>
+          <Badge
+            badgeContent={favourites ? favourites.length : 0}
+            color="secondary"
+          >
+            <Link to="/favourite">Favourite</Link>
+          </Badge>
         </li>
         <li>
           <Link to="/contact">Contact</Link>
@@ -74,7 +81,12 @@ function NavBar() {
                   <Link to={"/recipe"}>Recipe</Link>
                 </li>
                 <li>
-                  <Link to={"/favourite"}>Favourite</Link>
+                  <Badge
+                    badgeContent={favourites ? favourites.length : 0}
+                    color="secondary"
+                  >
+                    <Link to={"/favourite"}>Favourite</Link>
+                  </Badge>
                 </li>
                 <li>
                   <Link to={"/contact"}>Contact</Link>
