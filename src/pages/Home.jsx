@@ -1,4 +1,5 @@
 import React from "react";
+
 import Layout from "../components/Layout";
 import image from "../image/recipe.jpg";
 import "../styles/HomePage.css";

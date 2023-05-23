@@ -1,26 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import Layout from "../components/Layout";
 import RecipeItem from "../components/RecipeItem";
-
 import "../styles/Recipe.css";
 
 function Recipe({ addFavourite, removeFavourite }) {
   const [search, setSearch] = useState("");
   const [myRecipe, setMyRecipe] = useState([]);
 
-  function searchRecipe(evt) {
-    if (evt.key === "Enter") {
-      //console.log("hi");
+  useEffect(() => {
+    fetchRandomRecipes();
+  }, []);
 
-      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
-        .then((response) => response.json())
-        .then((data) => {
-          //console.log(data);
-
-          setMyRecipe(data.meals || []);
-        });
+  const fetchRandomRecipes = async () => {
+    try {
+      const promises = Array(20)
+        .fill()
+        .map(() =>
+          axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
+        );
+      const response = await Promise.all(promises);
+      const meals = response.map((res) => res.data.meals[0]);
+      setMyRecipe(meals);
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
+  const fetchRecipes = async () => {
+    try {
+      const response = await axios.get(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+      );
+      setMyRecipe(response.data.meals || []);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const searchRecipe = (evt) => {
+    if (evt.key === "Enter") {
+      fetchRecipes();
+    }
+  };
 
   return (
     <Layout>
@@ -40,7 +61,7 @@ function Recipe({ addFavourite, removeFavourite }) {
         </div>
         <div className="container">
           {myRecipe.length === 0 ? (
-            <p>Not Found</p>
+            <p className="para">Not Found</p>
           ) : (
             myRecipe.map((res) => {
               return (
@@ -53,8 +74,6 @@ function Recipe({ addFavourite, removeFavourite }) {
               );
             })
           )}
-          {/* <Favourite favourites={favourites} /> */}
-          {/* <FavoriteIcon color="primary" /> */}
         </div>
       </div>
     </Layout>

@@ -32,40 +32,10 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* justify-content: space-around; */
-  /* flex-wrap: wrap; */
   row-gap: 10px;
   column-gap: 10px;
 }
-/* .card {
-  width: 300px;
-  height: 400px;
-  margin: 1.5rem;
-  background: linear-gradient(
-    to left,
-    rgba(204, 255, 51, 0.5),
-    rgba(204, 255, 51, 0.5)
-  );
-  border-radius: 8px;
-  overflow: auto;
-  position: relative;
-  box-sizing: border-box;
-} */
-/* .card img {
-  width: 100%;
-}
-.card .info {
+.para {
   color: aliceblue;
-  text-align: center;
+  font-size: 30px;
 }
-.card .info h2 {
-  margin: 0;
-  font-weight: 900;
-  margin-top: 15px;
-}
-.card .info p {
-  margin: 0;
-  font-size: 17px;
-  letter-spacing: 2px;
-  margin-top: 10px;
-} */

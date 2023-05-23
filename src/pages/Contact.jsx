@@ -1,8 +1,7 @@
 import React from "react";
+
 import Layout from "../components/Layout";
 import "../styles/Contact.css";
-
-//import { Box, Typography } from "@mui/material";
 
 function Contact() {
   return (
@@ -15,7 +14,6 @@ function Contact() {
           For answers to frequentyasked questions about your subscription,please
           checkout our FAQ page.
         </p>
-
         <p className="para2">
           <span class="bold-text">Email address:</span> help@yammy.com
         </p>

@@ -1,42 +1,3 @@
-// import React, { useState } from "react";
-// import IconButton from "@material-ui/core/IconButton";
-// import FavoriteIcon from "@material-ui/icons/Favorite";
-
-// function RecipeItem({ getRecipe, addFavourite, removeFavourite }) {
-//   console.log(getRecipe.data);
-
-//   const [isFavourite, setIsFavourite] = useState(false);
-
-//   const toggleFavourite = () => {
-//     if (isFavourite) {
-//       removeFavourite(getRecipe.data);
-//     } else {
-//       addFavourite(getRecipe.data);
-//     }
-//     setIsFavourite(!isFavourite);
-//   };
-
-//   return (
-//     <div>
-//       <div className="card">
-//         <img src={getRecipe.data.strMealThumb} alt="" />
-//         <div className="info">
-//           <h2>{getRecipe.data.strMeal}</h2>
-//           <p>{getRecipe.data.strCategory}</p>
-//           <p>{getRecipe.data.strArea} Food</p>
-//           <p>{getRecipe.data.strIngredient}</p>
-//           <p>{getRecipe.data.strInstructions}</p>
-//         </div>
-//         <IconButton onClick={toggleFavourite}>
-//           <FavoriteIcon color={isFavourite ? "secondary" : "primary"} />
-//         </IconButton>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default RecipeItem;
-
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
@@ -50,7 +11,6 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
@@ -86,6 +46,16 @@ export default function RecipeReviewCard({
     setIsFavourite(!isFavourite);
   };
 
+  const ingredients = Array.from({ length: 20 }, (_, i) => i + 1)
+    .map((n) => ({
+      ingredient: getRecipe.data[`strIngredient${n}`],
+      measure: getRecipe.data[`strMeasure${n}`],
+    }))
+    .filter(({ ingredient }) => ingredient && ingredient.trim() !== "");
+
+  const initialIngredients = ingredients.slice(0, 3);
+  const remainingIngredients = ingredients.slice(3);
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
@@ -113,8 +83,15 @@ export default function RecipeReviewCard({
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {getRecipe.data.strIngredients}
+          Ingredients
         </Typography>
+        <ul>
+          {initialIngredients.map(({ ingredient, measure }, i) => (
+            <li key={i}>
+              {ingredient}: {measure}
+            </li>
+          ))}
+        </ul>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton onClick={toggleFavourite} aria-label="add to favorites">

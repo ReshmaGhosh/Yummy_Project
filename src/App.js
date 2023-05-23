@@ -7,8 +7,7 @@ import Recipe from "./pages/Recipe";
 import Favourite from "./pages/Favourite";
 import Contact from "./pages/Contact";
 import NavBar from "./components/NavBar";
-// import RecipeDetails from "./components/RecipeDetails";
-import Pagenotfound from "./pages/Pagenotfound";
+import PagenotFound from "./pages/PagenotFound";
 
 function App() {
   const [favourites, setFavourites] = useState([]);
@@ -39,7 +38,7 @@ function App() {
         />
         <Route path="/contact" element={<Contact />} />
 
-        <Route path="*" element={<Pagenotfound />} />
+        <Route path="*" element={<PagenotFound />} />
       </Routes>
       <NavBar favourites={favourites} />
     </div>
