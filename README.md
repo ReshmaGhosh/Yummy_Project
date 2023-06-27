@@ -1,5 +1,5 @@
 
-Deploy Link : https://vercel.com/reshma/isa-8-yummy-project/9sxK2znwQjL72ZEUF9y4BfLSQCFv  
+Deploy Link : https://isa-8-yummy-project-drab.vercel.app/
 
 # React Project
 
